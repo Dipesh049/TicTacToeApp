@@ -217,7 +217,7 @@
         android:layout_marginBottom="4dp"
         android:onClick="reset"
         android:text="Reset"
-        android:textColor="#FFFFFF"
+        android:textColor="#7C0000"
         app:layout_constraintBottom_toTopOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

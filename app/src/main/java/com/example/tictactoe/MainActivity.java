@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if( gamestate[Winpos[i][0]]!=2 && gamestate[Winpos[i][0]]==gamestate[Winpos[i][1]] &&  gamestate[Winpos[i][1]] == gamestate[Winpos[i][2]]){
                     TextView status = findViewById(R.id.status);
-                    if(gamestate[i]==1) {
+                    if(gamestate[Winpos[i][0]]==1) {
 
                         status.setText("o has Won");
                     }else{
