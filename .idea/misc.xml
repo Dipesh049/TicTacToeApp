@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/drawable/gradient_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-large/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-long/activity_main.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-night/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-normal/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-small/activity_main.xml" value="1.2" />
+        <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout-xlarge/activity_main.xml" value="0.190625" />
         <entry key="..\:/Users/Dipesh Patel/AndroidStudioProjects/TicTacToe/app/src/main/res/layout/activity_main.xml" value="0.176" />
       </map>
     </option>

@@ -12,41 +12,43 @@
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
         android:text="@string/tic_tac_toe"
-        android:textSize="40sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.032"
         app:layout_constraintVertical_weight="1" />
 
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="1000dp"
         android:contentDescription="grid"
+        android:scaleType="centerCrop"
         android:src="@drawable/grid"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="1000dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -55,10 +57,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="14.5dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="0" />
@@ -68,10 +70,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginStart="23dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginBottom="14.5dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="1" />
@@ -81,10 +83,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="14.5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="35dp"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="2" />
@@ -94,6 +96,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -102,10 +105,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginStart="23dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginTop="17dp"
-                android:layout_marginBottom="18.3dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="3" />
@@ -115,10 +118,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="17dp"
-                android:layout_marginBottom="18.3dp"
-                android:layout_marginStart="23dp"
-                android:layout_marginEnd="22dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="4" />
@@ -128,10 +131,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="17dp"
-                android:layout_marginBottom="18.3dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="35dp"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
                 android:onClick="playertap"
                 android:tag="5" />
@@ -147,11 +150,11 @@
                 android:id="@+id/iv7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
-                android:layout_marginStart="23dp"
-                android:layout_marginEnd="22dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="14.5dp"
                 android:onClick="playertap"
                 android:tag="6" />
 
@@ -159,11 +162,11 @@
                 android:id="@+id/iv8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="35dp"
                 android:layout_weight="1"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="14.5dp"
-                android:layout_marginStart="23dp"
-                android:layout_marginEnd="22dp"
                 android:onClick="playertap"
                 android:tag="7" />
 
@@ -171,11 +174,11 @@
                 android:id="@+id/iv9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginBottom="35dp"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="14.5dp"
                 android:onClick="playertap"
                 android:tag="8" />
         </LinearLayout>
@@ -184,11 +187,11 @@
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:layout_marginBottom="80dp"
         android:text="Tap to play"
-        android:textSize="30sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -201,7 +204,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="30sp"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -210,17 +213,17 @@
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="4dp"
         android:onClick="reset"
         android:text="Reset"
+        android:textSize="45sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
