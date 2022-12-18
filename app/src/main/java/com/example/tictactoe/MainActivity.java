@@ -37,16 +37,33 @@ public class MainActivity extends AppCompatActivity {
                 img.setImageResource(R.drawable.cross);
                 active_player = 1;
                 TextView status = findViewById(R.id.status);
-                status.setText("o's Turn ");
+                status.setText("O's Turn ");
             }else
             {
                 img.setImageResource(R.drawable.zero);
                 active_player = 0;
                 TextView status = findViewById(R.id.status);
-                status.setText("x's Turn ");
+                status.setText("X's Turn ");
 
             }
             img.animate().translationYBy(1000f).setDuration(300);
+            if(active_player==1 && gameMode==1){
+                int move = bestMove();
+                if(move!=-1){
+                    gamestate[move] = 1;
+                    String imgId = "iv"+(move+1);
+                    int resID = getResources().getIdentifier(imgId, "id", getPackageName());
+                    ImageView img2 = (ImageView) findViewById(resID);
+                    img2.setTranslationY(-1000f);
+                    img2.setImageResource(R.drawable.zero);
+                    active_player = 0;
+                    TextView status = findViewById(R.id.status);
+                    status.setText("X's Turn ");
+                    img2.animate().translationYBy(1000f).setDuration(300);
+
+                }
+
+            }
         }
         //if all the state are filled and no one won
         for (int i = 0; i < gamestate.length; i++) {
@@ -54,8 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }else{
                 if(i==gamestate.length-1){
+                    active_player=0;
                     TextView status = findViewById(R.id.status);
-                    status.setText("No One has Won");
+                    status.setText("Tie!");
 
                     TextView reset = findViewById(R.id.reset);
                     reset.setText("Tap to reset");
@@ -71,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
                     TextView status = findViewById(R.id.status);
                     if(gamestate[Winpos[i][0]]==1) {
 
-                        status.setText("o has Won");
+                        status.setText("O has Won");
                     }else{
-                        status.setText("x has Won");
+                        status.setText("X has Won");
                     }
 
 
@@ -86,6 +104,91 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        //minMax algorithm- bestmove
+     public int bestMove(){
+        int bestScore = Integer.MIN_VALUE;
+        int move = -1;
+        for(int i =0;i<gamestate.length;i++){
+            if(gamestate[i]==2){
+                gamestate[i] = active_player;
+                int score = minMax(0,0);
+                gamestate[i] = 2;
+                if(score>bestScore){
+                    bestScore = score;
+                    move = i;
+                }
+
+            }
+        }
+        return move;
+     }
+     //minmax
+    public int minMax(int depth,int active_player){
+        int result = checkWin(depth);
+        if(result!=0){
+            return result;
+        }
+        if(checkEmpty()){
+            return 0;
+        }
+        if(active_player==1){
+            int bestScore = Integer.MIN_VALUE;
+            for(int i= 0;i<gamestate.length;i++){
+                if(gamestate[i]==2){
+                    gamestate[i]=active_player;
+                    int score = minMax(depth+1,0);
+                    gamestate[i] = 2;
+                    bestScore = Math.max(bestScore,score);
+                }
+
+            }
+            return bestScore;
+
+        }else{
+            int bestScore = Integer.MAX_VALUE;
+            for(int i= 0;i<gamestate.length;i++){
+                if(gamestate[i]==2){
+                    gamestate[i]=active_player;
+                    int score = minMax(depth+1,1);
+                    gamestate[i] = 2;
+                    bestScore = Math.min(bestScore,score);
+                }
+
+            }
+            return bestScore;
+        }
+
+    }
+
+    //to check if winner
+    public int checkWin(int depth){
+        for(int i=0;i<Winpos.length;i++){
+
+            if( gamestate[Winpos[i][0]]!=2 && gamestate[Winpos[i][0]]==gamestate[Winpos[i][1]] &&  gamestate[Winpos[i][1]] == gamestate[Winpos[i][2]]){
+
+                if(gamestate[Winpos[i][0]]==1) {
+                    return 10-depth;
+                }else{
+                  return depth-10;
+                }
+
+            }
+
+
+
+        }
+        return 0;
+    }
+    //to check if all the places filled or not
+    public boolean checkEmpty(){
+        for (int i = 0; i < gamestate.length; i++) {
+           if(gamestate[i]==2){
+               return false;
+           }
+        }
+        return true;
+    }
+
 
         public void reset (View view){
         gameactive = 1;
