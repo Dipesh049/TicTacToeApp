@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SharedPreferences sharedPreferences = getSharedPreferences("mode",MODE_PRIVATE);
         gameMode = sharedPreferences.getInt("mode",0);
-        Log.d("mode",String.valueOf(gameMode));
+//        Log.d("mode",String.valueOf(gameMode));
 
 
     }
