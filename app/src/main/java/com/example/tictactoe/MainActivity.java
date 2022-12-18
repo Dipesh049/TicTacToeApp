@@ -3,7 +3,9 @@ package com.example.tictactoe;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
                                  {0,4,8},{2,4,6},{0,3,6},
                                  {1,4,7},{2,5,8}};
     int gameactive = 1;
+    int gameMode;
 
 
 
@@ -115,7 +118,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("mode",MODE_PRIVATE);
+        gameMode = sharedPreferences.getInt("mode",0);
+        Log.d("mode",String.valueOf(gameMode));
 
 
     }

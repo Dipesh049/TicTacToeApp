@@ -213,6 +213,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:background="@drawable/click_effect"
         android:onClick="reset"
         android:text="Reset"
         app:layout_constraintBottom_toTopOf="@+id/imageView15"
